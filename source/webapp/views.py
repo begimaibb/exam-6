@@ -7,7 +7,7 @@ from webapp.models import Guest
 
 
 def index_view(request):
-    guests = Guest.objects.order_by("created_date").filter(status="active")
+    guests = Guest.objects.order_by('-created_date').filter(status="active")
     context = {"guests": guests}
     return render(request, "index.html", context)
 
