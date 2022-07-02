@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}Delete task{% endblock %}
+
+{% block content %}
+<form action="" method="post">
+{% csrf_token %}
+    <h2>Are you sure you want to delete the guest {{ guest.name }}?</h2>
+    <button type="submit">Yes</button>
+</form>
+    <button><a href="{% url "index" %}">No</a></button>
+
+{#    <div class="modal fade" id="GuestDeleteModal" tabindex="-1" aria-labelledby="GuestDeleteModalLabel"#}
+{#         aria-hidden="true">#}
+{#        <div class="modal-dialog">#}
+{#            <div class="modal-content">#}
+{#                <div class="modal-header">#}
+{#                    <h5 class="modal-title" id="GuestDeleteModal">Modal title</h5>#}
+{#                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>#}
+{#                </div>#}
+{#                <div class="modal-body">#}
+{#                    Are you sure you want to delete the guest {{ guest.name }}?#}
+{#                </div>#}
+{#                <div class="modal-footer">#}
+{#                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>#}
+{#                    <form action="{% url "delete_guest" guest.pk %}" method="post">#}
+{#                        {% csrf_token %}#}
+{#                        <button type="submit">Yes</button>#}
+{#                    </form>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{% endblock %}
